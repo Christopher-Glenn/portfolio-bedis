@@ -1,6 +1,5 @@
 'use client';
 
-import MarqueeButton from './buttons/MarqueeButton';
 import AscendText from './animations/AscendText';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -88,15 +87,7 @@ export default function Hero() {
               LOVE PIZZA, CATS AND ART.
             </AscendText>
           </div>
-          <div className="sm:pl-[28rem] pl-[10rem] sm:pt-6 pt-4">
-            <a
-              href='https://mail.google.com/mail/?view=cm&fs=1&to=christopherglenn.bedis@wvsu.edu.ph'
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <MarqueeButton title="Contact Me" classname="bg-none text-white" />
-            </a>
-          </div>
+          
         </div>
       </div>
     </div>

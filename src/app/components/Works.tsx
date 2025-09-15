@@ -1,17 +1,6 @@
 import React, { Suspense, lazy } from 'react'
-import { PiBagFill } from 'react-icons/pi'
 import Image from 'next/image'
 
-const TimeLineItem = lazy(() => import('./timeline').then(module => ({
-  default: module.TimeLineItem
-})))
-
-const TimelineItemSkeleton = () => (
-  <div className="animate-pulse mb-4">
-    <div className="h-4 bg-gray-700 rounded w-3/4 mb-2"></div>
-    <div className="h-3 bg-gray-600 rounded w-1/2"></div>
-  </div>
-)
 
 const ProjectSkeleton = () => (
   <div className="animate-pulse">
@@ -49,46 +38,6 @@ export default function Works({ id }: { id?: string }) {
           <h3 className="font-neue font-medium text-white sm:text-[1.2rem] text-[1rem] uppercase">
             Project Manager, Developer
           </h3>
-        </div>
-
-        <div className="bento-card sm:p-4 p-0 pt-4 sm-pt-8 w-full sm:w-[23rem] mr-52 mt-6 text-white order-1 sm:order-3">
-          <div className="flex items-center gap-2 pl-4">
-            <PiBagFill className="w-5 h-5 sm:w-6 sm:h-6 fill-gray-400" />
-            <h2 className="text-xl sm:text-2xl font-medium">Experience</h2>
-          </div>
-
-          <section className="relative flex flex-row pt-8 pl-4">
-            <div className="absolute left-6 inset-y-12 border-l-2 border-gray-400 z-0" />
-            
-            <div className="flex flex-col">
-              <Suspense fallback={<TimelineItemSkeleton />}>
-                <TimeLineItem
-                  title="Project Manager"
-                  subtitle="ePaulTech Solutions, BINHI TBI"
-                  year="2025"
-                  className="bg-white"
-                />
-                <TimeLineItem
-                  title="Research & Development Engineer"
-                  subtitle="WVSU - SPARK Hub"
-                  year="2025"
-                  className="bg-muted"
-                />
-                <TimeLineItem
-                  title="BS Computer Science"
-                  subtitle="West Visayas State University"
-                  year="2023"
-                  className="bg-muted"
-                />
-                <TimeLineItem
-                  title="Hello World!"
-                  subtitle="Wrote my first line of code"
-                  year="2021"
-                  className="bg-muted"
-                />
-              </Suspense>
-            </div>
-          </section>
         </div>
 
         {/* First Project Image */}

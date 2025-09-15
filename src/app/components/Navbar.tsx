@@ -7,9 +7,7 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ opacity }) => {
-  // Cap opacity at 0.9 for background color
   const cappedOpacity = Math.min(opacity, 0.8);
-  // Calculate blur strength based on capped opacity
   const blurStrength = Math.min(cappedOpacity * 6, 6);
 
   return (
@@ -35,7 +33,10 @@ const Navbar: React.FC<NavbarProps> = ({ opacity }) => {
               <Link href="#about" className="hover-underline-animation">about,</Link>
             </li>
             <li>
-              <Link href="#contact" className="hover-underline-animation">contact</Link>
+              <Link href="#contact" className="hover-underline-animation">contact,</Link>
+            </li>
+            <li>
+              <Link href="#skills" className="hover-underline-animation">skills</Link>
             </li>
           </ul>
         </div>

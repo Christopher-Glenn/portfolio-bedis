@@ -161,3 +161,16 @@ button:hover > span {
   background-color: white;
   transition: background-color 0.3s ease-in-out;
 }
+
+.tech-stack{
+  border-radius: 0.5rem;
+  padding-inline: 0.5rem;
+  padding-block: 0.25em;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  .tech-stack {
+    font-size: 0.7rem;
+  }
+}

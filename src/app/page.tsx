@@ -9,19 +9,20 @@ import Contacts from './components/Contacts';
 import CenterHoleOverlay from './components/animations/Centerhole';
 import Image from 'next/image';
 import { useScrollFade } from '../../lib/useScrollFade';
+import Skills from './components/Skills';
 
 export default function Home() {
   const opacity = useScrollFade({
     inStart: 300,
     inEnd: 800,
-    outStart: 3700,
-    outEnd: 4200,
+    outStart: 4500,
+    outEnd: 4900,
     defaultOpacity: 1,
   });
 
   const mobileOpacity = useScrollFade({
-    outStart: 2600,
-    outEnd: 3000,
+    outStart: 3100,
+    outEnd: 3500,
     defaultOpacity: 1,
   });
 
@@ -53,6 +54,7 @@ export default function Home() {
       <Hero />
       <About id="about" />
       <Works id="works" />
+      <Skills id="skills"/>
       <Cases />
       <Contacts id="contact" />
     </main>
