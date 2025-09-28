@@ -32,9 +32,9 @@ export default function Home() {
         <Image
           src="/images/heropage-bg.webp"
           alt="background-image"
-          fill
+          width={1555}
+          height={900}  
           priority
-          className="object-cover object-left-top brightness-90"
         />
       </div>
 
@@ -54,7 +54,7 @@ export default function Home() {
       <Hero />
       <About id="about" />
       <Works id="works" />
-      <Skills id="skills"/>
+      <Skills id="skills" />
       <Cases />
       <Contacts id="contact" />
     </main>
