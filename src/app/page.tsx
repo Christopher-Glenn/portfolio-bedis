@@ -21,20 +21,23 @@ export default function Home() {
   });
 
   const mobileOpacity = useScrollFade({
-    outStart: 3100,
-    outEnd: 3500,
+    outStart: 3400,
+    outEnd: 3800,
     defaultOpacity: 1,
   });
 
+
+
   return (
     <main className="relative min-h-screen">
-      <div className="fixed inset-0 -z-30">
+      <div className="fixed inset-0 -z-30 h-auto md:h-[900px]">
         <Image
           src="/images/heropage-bg.webp"
           alt="background-image"
           width={1555}
-          height={900}  
+          height={900}
           priority
+          className="w-full h-full object-cover"
         />
       </div>
 
