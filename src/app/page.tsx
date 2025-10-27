@@ -26,8 +26,6 @@ export default function Home() {
     defaultOpacity: 1,
   });
 
-
-
   return (
     <main className="relative min-h-screen">
       <div className="fixed inset-0 -z-30 h-auto md:h-[900px]">
