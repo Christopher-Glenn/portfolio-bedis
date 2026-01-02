@@ -15,8 +15,8 @@ export default function Home() {
   const opacity = useScrollFade({
     inStart: 300,
     inEnd: 800,
-    outStart: 4500,
-    outEnd: 4900,
+    outStart: 5000,
+    outEnd: 5500,
     defaultOpacity: 1,
   });
 
@@ -28,7 +28,7 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen">
-      <div className="fixed inset-0 -z-30 h-auto md:h-[900px]">
+      <div className="fixed inset-0 -z-30 h-auto md:h-[1200px]">
         <Image
           src="/images/heropage-bg.webp"
           alt="background-image"

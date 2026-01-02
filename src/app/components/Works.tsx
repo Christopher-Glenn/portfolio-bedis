@@ -15,7 +15,7 @@ export default function Works({ id }: { id?: string }) {
     <div id={id} className='relative sm:px-16 px-6 sm:pt-[10rem] pt-30'>
       <div className='flex flex-row'>
         <div className='flex sm:pl-50 flex-row'>
-          <Image 
+          <Image
             src="/images/decagramStar.webp"
             className='h-auto sm:w-14 w-6'
             width={56}
@@ -87,17 +87,40 @@ export default function Works({ id }: { id?: string }) {
           layout="right-image-large"
         />
       </Suspense>
+      <section className="sm:pl-50 grid grid-cols-1 sm:grid-cols-[0.8fr_1fr_1fr] items-center pt-16">
+        <div className="sm:block hidden flex-col order-1 sm:order-1">
+          <div className="overflow-visible h-[7.6rem] md:overflow-hidden md:h-[7.3rem]">
+            <h2 className="uppercase font-tusker text-cozywhite sm:text-[8rem] text-[4.5rem] 
+            sm:leading-24 leading-47">True-Breed</h2>
+          </div>
+          <h3 className="font-neue font-medium text-white sm:text-[1.2rem] text-[1rem] uppercase">
+            Lead Developer
+          </h3>
+        </div>
+        <div className="sm:block hidden img-hover-zoom w-[12rem] h-[25rem] sm:w-[18rem] sm:h-[33rem] sm:pt-0 pt-6 cursor-pointer order-2 sm:order-2 relative">
+          <a href="https://github.com/Christopher-Glenn/truebreed-hub" aria-label="Visit True-Breedhub Project">
+            <Image
+              src="/images/works-5.webp"
+              alt="true-breed hub project screenshot"
+              fill
+              className="object-cover"
+              loading="lazy"
+              sizes="(max-width: 768px) 12rem, 18rem"
+            />
+          </a>
+        </div>
+      </section>
     </div>
   )
 }
 
-function ProjectSection({ 
-  href, 
-  imageSrc, 
-  imageAlt, 
-  title, 
-  role, 
-  layout 
+function ProjectSection({
+  href,
+  imageSrc,
+  imageAlt,
+  title,
+  role,
+  layout
 }: {
   href: string
   imageSrc: string
@@ -150,7 +173,7 @@ function ProjectSection({
           </a>
         </div>
       )}
-      
+
       <div className={`sm:block hidden flex-col ${layout === 'right-image-large' ? 'pt-12 justify-self-end sm:pr-8 pr-0' : layout === 'right-image' ? 'pt-12 sm:pl-8 pl-0' : 'pt-16 pl-6'}`}>
         <div className="overflow-visible h-[7.6rem] md:overflow-hidden md:h-[7.3rem]">
           <h2 className="uppercase font-tusker text-cozywhite sm:text-[8rem] text-[4.5rem] 

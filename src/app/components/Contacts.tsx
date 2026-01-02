@@ -94,7 +94,7 @@ const buttonGroups = [
 ];
 
 const Socials = [
-  "Facebook", "Instagram", "LinkedIn", "Fiverr"
+  "Facebook", "Instagram", "LinkedIn", "Fiverr", "Github"
 ]
 
 
@@ -141,15 +141,20 @@ const Contacts = ({ id }: { id?: string }) => {
           </div>
           <div className='flex flex-row border-t-1 border-gray-200/50 py-4 gap-6'>
             <>
-              <a href='https://www.facebook.com/Noonelikesyou.btch'>
+              <a href='https://www.facebook.com/chrisNoTopher'>
                 <span className='h3--uppercase'>{Socials[0]}</span>
               </a>
-              <span className='h3--uppercase'>{Socials[1]}</span>
-              <a href='https://www.linkedin.com/in/christopher-glenn-bedis-a60bb437b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'>
+              <a href='https://www.instagram.com/chris_glb04/'>
+                <span className='h3--uppercase'>{Socials[1]}</span>
+              </a>
+              <a href='https://www.linkedin.com/in/christopher-glenn-bedis'>
                 <span className='h3--uppercase'>{Socials[2]}</span>
               </a>
               <a href="https://www.fiverr.com/s/EgDewoe">
                 <span className='h3--uppercase'>{Socials[3]}</span>
+              </a>
+              <a href="https://github.com/Christopher-Glenn">
+                <span className='h3--uppercase'>{Socials[4]}</span>
               </a>
             </>
           </div>
