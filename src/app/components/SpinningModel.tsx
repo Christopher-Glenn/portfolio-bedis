@@ -1,13 +1,32 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
-import { useFrame } from '@react-three/fiber';
+import { useRef, useEffect, useState, useMemo } from 'react';
+import { useFrame, useThree } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
-import { Group } from 'three';
+import { Group, WebGLRenderer } from 'three';
+import { KTX2Loader, type GLTFLoader } from 'three-stdlib';
+
+const MODEL_PATH = '/3d/optimized-model_compressed.glb';
+
+let ktx2Loader: KTX2Loader | null = null;
+
+function setKTX2Support(loader: GLTFLoader, gl: WebGLRenderer) {
+  if (!ktx2Loader) {
+    ktx2Loader = new KTX2Loader()
+      .setTranscoderPath('/basis/')
+      .detectSupport(gl);
+  }
+  loader.setKTX2Loader(ktx2Loader);
+}
 
 const SpinningModel = () => {
   const modelRef = useRef<Group>(null);
-  const gltf = useGLTF('/3d/optimized-model.glb');
+  const gl = useThree((state) => state.gl);
+  const extendLoader = useMemo(
+    () => (loader: GLTFLoader) => setKTX2Support(loader, gl),
+    [gl]
+  );
+  const gltf = useGLTF(MODEL_PATH, true, true, extendLoader);
   const [scale, setScale] = useState(5);
   const [position, setPosition] = useState([0, -2.2, 0.3]);
 

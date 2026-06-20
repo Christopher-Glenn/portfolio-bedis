@@ -18,7 +18,7 @@ export default function Example() {
         <div className="absolute inset-0 flex whitespace-nowrap marquee-inner">
           <span className="mx-4">See Other Works</span>
           <span className="mx-4">See Other Works</span>
-        </div> 
+        </div>
       </button>
       <Dialog open={open} onClose={setOpen} className="relative z-99">
         <DialogBackdrop
@@ -51,13 +51,54 @@ export default function Example() {
                     </button>
                   </div>
                   <section className="relative mt-6 flex-1 px-4 sm:px-10">
-                    <DrawerProjects name='True-Breeed Hub' role='Development' year={2025} />
-                    <DrawerProjects name='Spark-Hub' role='Development' year={2025} />
-                    <DrawerProjects name='Paul-Kaldi' role='Project Manager, Development' year={2025} />
-                    <DrawerProjects name='RediPost' role='Development' year={2024} />
-                    <DrawerProjects name='Tiringbanay Infosite' role='Development' year={2024} /> 
-                    <DrawerProjects name='Binhi Website' role='Development' year={2023} />
-                    <DrawerProjects name='USC Infosite' role='Development' year={2023} />
+                    {/* <DrawerProjects
+                      name="3D Segmentation Research"
+                      link=""
+                      description="AI medical image segmentation"
+                      year={2026}
+                    /> */}
+                    <DrawerProjects
+                      name="True-Breed Hub"
+                      link="https://github.com/Christopher-Glenn/truebreed-hub"
+                      description="Pet breeding match platform"
+                      year={2025}
+                    />
+                    <DrawerProjects
+                      name="Spark-Hub"
+                      link="https://spark-hub-website.vercel.app/"
+                      description="Student Organization Official Website"
+                      year={2025}
+                    />
+                    <DrawerProjects
+                      name="Paul-Kaldi"
+                      link="paul-kaldi-coffee.vercel.app"
+                      description="End-to-end coffee shop management system"
+                      year={2025}
+                    />
+                    <DrawerProjects
+                      name="RediPost"
+                      link="https://cict.wvsu-fundays.com/"
+                      description="Information sharing platform development"
+                      year={2024}
+                    />
+                    <DrawerProjects
+                      name="Tiringbanay Infosite"
+                      link="https://tiringbanay-2024.vercel.app"
+                      description="Event information website development"
+                      year={2024}
+                    />
+                    <DrawerProjects
+                      name="Binhi Website"
+                      link="https://binhi.wvsu.edu.ph/"
+                      description="Startup incubator website development"
+                      year={2023}
+                    />
+                    <DrawerProjects
+                      name="USC Infosite"
+                      link="https://wvsu-usc.org/"
+                      description="Student organization website development"
+                      year={2023}
+                    />
                   </section>
                 </div>
               </DialogPanel>

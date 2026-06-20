@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import { PiBagFill } from 'react-icons/pi'
@@ -16,52 +18,47 @@ const TimeLineItem = dynamic(
 )
 
 const frontendSkills = [
-    { text: 'JavaScript', class: 'bg-[#f8e026] text-black' },
-    { text: 'TypeScript', class: 'bg-[#2d78c7] text-white' },
-    { text: 'React', class: 'bg-[#222222] text-[#00ddfb] px-3!' },
-    { text: 'Next.js', class: 'bg-black text-[#f1f1f1] px-3!' },
-    { text: 'Svelte', class: 'bg-[#fe4407] text-white px-3!' },
-    { text: 'Astro', class: 'bg-[#fefefe] text-[#18191e]' },
-    { text: 'TailwindCSS', class: 'bg-white text-[#3ebff8]' },
-    { text: 'SCSS', class: 'bg-[#d573a6] text-white' }
+    { text: 'JavaScript'},
+    { text: 'TypeScript'},
+    { text: 'React'},
+    { text: 'Next.js'},
+    { text: 'Svelte'},
+    { text: 'Astro'},
+    { text: 'TailwindCSS'},
+    { text: 'SCSS'}
 ]
 
 const backendSkills = [
-    { text: 'Node.js', class: 'bg-[#87ce30] text-white' },
-    { text: 'Python', class: 'bg-[#3e74a3] text-white' },
-    { text: 'Java', class: 'bg-white text-[#ed2631] px-4!' },
-    { text: 'MongoDB', class: 'bg-[#011e2c] text-[#00f26b]' },
-    { text: 'MySQL', class: 'bg-white text-[#097893] px-4!' },
-    { text: 'PHP', class: 'bg-[#8d96c1] text-[#2e2d38] px-5!' }
+    { text: 'Node.js'},
+    { text: 'Python'},
+    { text: 'Java'},
+    { text: 'MongoDB'},
+    { text: 'MySQL'},
+    { text: 'PHP'}
 ]
 
 const aiSkills = [
-    { text: 'TensorFlow', class: 'bg-white text-[#ee6634]' },
-    { text: 'PyTorch', class: 'bg-[#1d1f1c] text-[#ee6634]' },
-    {
-        text: 'LlamaIndex',
-        class:
-            'bg-[#080808] bg-gradient-to-r from-[#ffa6ea] via-[#45dff8] to-[#bb8deb] bg-clip-text text-transparent'
-    }
+    { text: 'TensorFlow'},
+    { text: 'PyTorch'},
+    { text: 'LlamaIndex'}
 ]
 
 const cmsSkills = [
-    { text: 'WordPress', class: 'bg-white text-[#007496]' },
-    { text: 'Strapi', class: 'bg-white text-[#363490] px-3!' },
-    { text: 'Framer', class: 'bg-[#0055fe] text-white px-3!' },
-    { text: 'n8n', class: 'bg-[#eb5175] text-white px-3!' }
+    { text: 'WordPress' },
+    { text: 'Strapi' },
+    { text: 'Framer' },
+    { text: 'n8n', }
 ]
 
 const devTools = [
-    { text: 'Git', class: 'bg-white text-[#f05539] px-4!' },
-    { text: 'GitHub', class: 'bg-black text-white px-3!' },
-    { text: 'VS Code', class: 'bg-white text-[#0a7cbb]' },
-    { text: 'PyCharm', class: 'bg-white text-[#4c8446]' },
-    { text: 'Slack', class: 'bg-[#4a154b] text-white px-3!' },
-    { text: 'Discord', class: 'bg-white text-[#5769f9] px-3!' },
-    { text: 'Teams', class: 'bg-[#5358be] text-white px-3!' },
-    { text: 'Jira', class: 'bg-[#fefefe] text-[#213558] px-4!' },
-    { text: 'Trello', class: 'bg-[#095fda] text-white px-3!' }
+    { text: 'Git', },
+    { text: 'VS Code', },
+    { text: 'PyCharm', },
+    { text: 'Slack' },
+    { text: 'Discord' },
+    { text: 'Teams' },
+    { text: 'Jira' },
+    { text: 'Trello' }
 ]
 
 const experiences = [
@@ -103,17 +100,23 @@ export default function Skills({ id }: { id?: string }) {
                     <div className="flex flex-row font-bold sm:pl-6 pl-2 font-neue text-white sm:text-[2.3rem] text-[0.9rem] uppercase">
                         Skills
                     </div>
+
                 </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 sm:pt-0 pt-5">
                 <section className="bento-card flex flex-col gap-2 p-6 font-medium">
+                    <div className='flex items-center text-cozywhite justify-between'>
+                        <div>
+                            <h1 className='text-lg sm:text-2xl'>Tech Stack</h1>
+                        </div>
+                    </div>
                     <h2 className="text-cozywhite font-semibold sm:text-xl text-base">
                         Frontend
                     </h2>
                     <div className="flex flex-row flex-wrap gap-4">
                         {frontendSkills.map(s => (
-                            <span key={s.text} className={`tech-stack ${s.class}`}>
+                            <span key={s.text} className={`tech-stack text-white pl-3`}>
                                 {s.text}
                             </span>
                         ))}
@@ -124,7 +127,7 @@ export default function Skills({ id }: { id?: string }) {
                     </h2>
                     <div className="flex flex-row flex-wrap gap-4">
                         {backendSkills.map(s => (
-                            <span key={s.text} className={`tech-stack ${s.class}`}>
+                            <span key={s.text} className={`tech-stack text-white pl-3`}>
                                 {s.text}
                             </span>
                         ))}
@@ -135,7 +138,7 @@ export default function Skills({ id }: { id?: string }) {
                     </h2>
                     <div className="flex flex-row flex-wrap gap-4">
                         {aiSkills.map(s => (
-                            <span key={s.text} className={`tech-stack ${s.class}`}>
+                            <span key={s.text} className={`tech-stack text-white pl-3`}>
                                 {s.text}
                             </span>
                         ))}
@@ -146,7 +149,7 @@ export default function Skills({ id }: { id?: string }) {
                     </h2>
                     <div className="flex flex-row flex-wrap gap-4">
                         {cmsSkills.map(s => (
-                            <span key={s.text} className={`tech-stack ${s.class}`}>
+                            <span key={s.text} className={`tech-stack text-white pl-3`}>
                                 {s.text}
                             </span>
                         ))}
@@ -157,7 +160,7 @@ export default function Skills({ id }: { id?: string }) {
                     </h2>
                     <div className="flex flex-row flex-wrap gap-4">
                         {devTools.map(s => (
-                            <span key={s.text} className={`tech-stack ${s.class}`}>
+                            <span key={s.text} className={`tech-stack text-white pl-3`}>
                                 {s.text}
                             </span>
                         ))}
@@ -173,13 +176,13 @@ export default function Skills({ id }: { id?: string }) {
                     <section className="relative flex flex-row pt-8 pl-4">
                         <div className="absolute left-6 inset-y-12 border-l-2 border-gray-400 z-0" />
                         <div className="flex flex-col">
-                            {experiences.map(exp => (
+                            {experiences.map((exp, index) => (
                                 <TimeLineItem
                                     key={exp.title}
                                     title={exp.title}
                                     subtitle={exp.subtitle}
                                     year={exp.year}
-                                    className="bg-muted"
+                                    className={index === 0 ? "bg-white" : "bg-muted"}
                                 />
                             ))}
                         </div>

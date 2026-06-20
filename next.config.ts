@@ -1,7 +1,18 @@
 import type { NextConfig } from "next";
+import bundleAnalyzer from "@next/bundle-analyzer";
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 768, 1024, 1280],
+  },
+  experimental: {
+    optimizePackageImports: ['react-icons', '@heroicons/react', 'framer-motion'],
+  },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);

@@ -7,36 +7,10 @@
   --color-muted: #111;
   --color-border: #333 ;
 
-  --font-tusker: 'Tusker', sans-serif;
-  --font-neue: 'Neue', sans-serif;
-  --font-migra: 'Migra', sans-serif;
-  --font-maelstrom: 'Maelstrom', sans-serif;
-}
-/* tailwind base styles */
-@layer base {
-  @font-face {
-    font-family: 'Tusker';
-    src: url('../../public/fonts/TuskerGrotesk-2500Medium.woff2') format('woff2');
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Neue';
-    src: url('../../public/fonts/NeueMontreal-Regular.woff2') format('woff2') ;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Migra';
-    src: url('../../public/fonts/migra-medium.woff2') format('woff2') ; 
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Maelstrom';
-    src: url('../../public/fonts/maelstrom-sans-bold.woff2') format('woff2') ;
-    font-display: swap;
-  }
+  --font-tusker: var(--font-tusker-family), sans-serif;
+  --font-neue: var(--font-neue-family), sans-serif;
+  --font-migra: var(--font-migra-family), sans-serif;
+  --font-maelstrom: var(--font-maelstrom-family), sans-serif;
 }
 
 html{
@@ -158,7 +132,7 @@ button:hover > span {
 }
 
 .hover-circle:hover{
-  background-color: white;
+  background-color: rgb(53, 53, 53);
   transition: background-color 0.3s ease-in-out;
 }
 

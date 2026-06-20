@@ -15,8 +15,8 @@ export function TimeLineItem({ title, subtitle, year, className }: TimeLineItemP
         <h2 className='font-medium text-sm sm:text-xl'>{title}</h2>
         <h3 className='pt-2 font-normal text-xs sm:text-base'>{subtitle}</h3>
       </div>
-      <div className='flex border-white text-xs sm:text-base border-1 p-0.5 px-2 sm:px-3 rounded-3xl ml-auto mt-auto'>
-        {year}
+      <div className='flex border-white text-xs sm:text-base border-1 p-0.5 px-2 sm:px-3 rounded-3xl ml-auto mt-auto sm:mb-auto'>
+        {year} 
       </div>
     </div>
   )

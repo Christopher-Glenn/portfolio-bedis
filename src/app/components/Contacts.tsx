@@ -13,7 +13,7 @@ const buttonGroups = [
       {
         title: 'Ux/ui design',
         href: makeMailto(
-          'christopherglenn.bedis@wvsu.edu.ph',
+          'christopher.bedis.tech@gmail.com',
           '💼 Could you help me with UX/UI design?',
           'Hi, I found your portfolio and wanted to ask about UX/UI design...'
         ),
@@ -139,28 +139,19 @@ const Contacts = ({ id }: { id?: string }) => {
             }
               classname='bg-white text-muted font-medium' />
           </div>
-          <div className='flex flex-row border-t-1 border-gray-200/50 py-4 gap-6'>
-            <>
-              <a href='https://www.facebook.com/chrisNoTopher'>
-                <span className='h3--uppercase'>{Socials[0]}</span>
-              </a>
-              <a href='https://www.instagram.com/chris_glb04/'>
-                <span className='h3--uppercase'>{Socials[1]}</span>
-              </a>
-              <a href='https://www.linkedin.com/in/christopher-glenn-bedis'>
-                <span className='h3--uppercase'>{Socials[2]}</span>
-              </a>
-              <a href="https://www.fiverr.com/s/EgDewoe">
-                <span className='h3--uppercase'>{Socials[3]}</span>
-              </a>
-              <a href="https://github.com/Christopher-Glenn">
-                <span className='h3--uppercase'>{Socials[4]}</span>
-              </a>
-            </>
+          <div className="flex flex-row flex-wrap border-t border-gray-200/50 py-4 gap-6">
+            <a href="https://www.facebook.com/chrisNoTopher">
+              <span className="h3--uppercase">{Socials[0]}</span>
+            </a>
+            <a href="https://www.linkedin.com/in/christopher-glenn-bedis">
+              <span className="h3--uppercase">{Socials[2]}</span>
+            </a>
+            <a href="https://github.com/Christopher-Glenn">
+              <span className="h3--uppercase">{Socials[4]}</span>
+            </a>
           </div>
         </div>
       </section>
-
     </div>
   )
 }
