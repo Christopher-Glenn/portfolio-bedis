@@ -1,23 +1,22 @@
 'use client';
+
 import React from 'react';
 import Link from 'next/link';
 
 interface NavbarProps {
-  opacity: number;
+  sectionRef: React.RefObject<HTMLElement | null>;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ opacity }) => {
-  const cappedOpacity = Math.min(opacity, 0.8);
-  const blurStrength = Math.min(cappedOpacity * 6, 6);
-
+const Navbar: React.FC<NavbarProps> = ({ sectionRef }) => {
   return (
     <nav className="sticky top-0 z-50">
       <section
+        ref={sectionRef}
         className="px-5 pt-6 sm:px-10 sm:pt-9 transition-all duration-300"
         style={{
-          backgroundColor: `rgba(19, 19, 19, ${cappedOpacity})`,
-          backdropFilter: `blur(${blurStrength}px)`,
-          WebkitBackdropFilter: `blur(${blurStrength}px)`,
+          backgroundColor: 'rgba(19, 19, 19, 0)',
+          backdropFilter: 'blur(0px)',
+          WebkitBackdropFilter: 'blur(0px)',
         }}
       >
         <div className="flex flex-row justify-between border-b border-b-cozywhite/65 sm:pb-6 pb-3 ">

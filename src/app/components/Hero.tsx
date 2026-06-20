@@ -18,24 +18,43 @@ export default function Hero() {
   const [month, setMonth] = useState('');
 
   useEffect(() => {
-    let count = 0;
-    const interval = setInterval(() => {
-      count++;
-      setDay(count);
-      if (count >= targetDay) clearInterval(interval);
-    }, 40);
-    return () => clearInterval(interval);
-  }, [targetDay]);
+    const runAnimation = () => {
+      let count = 0;
+      const dayInterval = setInterval(() => {
+        count++;
+        setDay(count);
+        if (count >= targetDay) clearInterval(dayInterval);
+      }, 40);
 
-  useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      setMonth(monthNames[index]);
-      index++;
-      if (index > targetMonthIndex) clearInterval(interval);
-    }, 130);
-    return () => clearInterval(interval);
-  }, [targetMonthIndex]);
+      let index = 0;
+      const monthInterval = setInterval(() => {
+        setMonth(monthNames[index]);
+        index++;
+        if (index > targetMonthIndex) clearInterval(monthInterval);
+      }, 130);
+
+      return () => {
+        clearInterval(dayInterval);
+        clearInterval(monthInterval);
+      };
+    };
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setDay(targetDay);
+      setMonth(monthNames[targetMonthIndex]);
+      return;
+    }
+
+    let cleanup: (() => void) | undefined;
+    const id = window.requestIdleCallback(() => {
+      cleanup = runAnimation();
+    }, { timeout: 2000 });
+
+    return () => {
+      window.cancelIdleCallback(id);
+      cleanup?.();
+    };
+  }, [targetDay, targetMonthIndex]);
 
   return (
     <div className="relative">

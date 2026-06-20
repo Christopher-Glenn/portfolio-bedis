@@ -1,10 +1,6 @@
-'use client';
-
-import React from 'react'
-import dynamic from 'next/dynamic'
+import React from 'react';
 import AscendText from './animations/AscendText';
-
-const ModelCanvas = dynamic(() => import('@/app/components/ModelCanvas'), { ssr: false });
+import LazyModelCanvas from './LazyModelCanvas';
 
 export default function About({ id }: { id?: string }) {
   return (
@@ -27,9 +23,7 @@ export default function About({ id }: { id?: string }) {
           team settings. I&rsquo;ve collaborated extensively with fintech startups to develop software that
           offers practical benefits.
         </div>
-        <div className="sm:w-[45rem] sm:h-auto h-[22rem] w-full pt-5 sm:pt-0">
-          <ModelCanvas />
-        </div>
+        <LazyModelCanvas />
       </div>
       <div className="relative pt-8 sm:pt-12 flex flex-col sm:pl-0 pl-20 items-start sm:items-center">
         <h2 className="uppercase font-bold font-neue text-white text-[0.875rem] sm:pl-[35rem] sm:text-[2.3rem] leading-3 sm:leading-5 relative">
@@ -57,5 +51,5 @@ export default function About({ id }: { id?: string }) {
         </h3>
       </div>
     </div>
-  )
+  );
 }

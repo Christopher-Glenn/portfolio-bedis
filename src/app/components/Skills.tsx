@@ -1,22 +1,6 @@
-'use client';
-
 import Image from 'next/image'
-import dynamic from 'next/dynamic'
 import { PiBagFill } from 'react-icons/pi'
-
-const TimeLineItem = dynamic(
-    () => import('./timeline').then(m => m.TimeLineItem),
-    {
-        ssr: false,
-        loading: () => (
-            <div className="animate-pulse mb-4">
-                <div className="h-4 bg-gray-700 rounded w-3/4 mb-2" />
-                <div className="h-3 bg-gray-600 rounded w-1/2" />
-            </div>
-        )
-    }
-)
-
+import { TimeLineItem } from './timeline'
 const frontendSkills = [
     { text: 'JavaScript'},
     { text: 'TypeScript'},

@@ -1,12 +1,14 @@
 'use client';
 
-import { useRef, useEffect, useState, useMemo } from 'react';
+import { useRef, useMemo } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import { Group, WebGLRenderer } from 'three';
 import { KTX2Loader, type GLTFLoader } from 'three-stdlib';
 
 const MODEL_PATH = '/3d/optimized-model_compressed.glb';
+const MOBILE_POSITION: [number, number, number] = [0, -2, 0.4];
+const DESKTOP_POSITION: [number, number, number] = [0, -2.2, 0.3];
 
 let ktx2Loader: KTX2Loader | null = null;
 
@@ -19,7 +21,7 @@ function setKTX2Support(loader: GLTFLoader, gl: WebGLRenderer) {
   loader.setKTX2Loader(ktx2Loader);
 }
 
-const SpinningModel = () => {
+const SpinningModel = ({ active }: { active: boolean }) => {
   const modelRef = useRef<Group>(null);
   const gl = useThree((state) => state.gl);
   const extendLoader = useMemo(
@@ -27,32 +29,25 @@ const SpinningModel = () => {
     [gl]
   );
   const gltf = useGLTF(MODEL_PATH, true, true, extendLoader);
-  const [scale, setScale] = useState(5);
-  const [position, setPosition] = useState([0, -2.2, 0.3]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 640) {
-        setScale(5); 
-        setPosition([0, -2, 0.4]); 
-      } else {
-        setScale(5); 
-        setPosition([0, -2.2, 0.3]); 
-      }
-    };
-
-    handleResize(); 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const position =
+    typeof window !== 'undefined' && window.innerWidth < 640
+      ? MOBILE_POSITION
+      : DESKTOP_POSITION;
 
   useFrame(() => {
-    if (modelRef.current) {
+    if (active && modelRef.current) {
       modelRef.current.rotation.y += 0.01;
     }
   });
 
-  return <primitive ref={modelRef} object={gltf.scene} scale={scale} position={position} />;
+  return (
+    <primitive
+      ref={modelRef}
+      object={gltf.scene}
+      scale={5}
+      position={position}
+    />
+  );
 };
 
 export default SpinningModel;
