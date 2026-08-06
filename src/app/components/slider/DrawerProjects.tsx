@@ -16,13 +16,13 @@ export default function DrawerProjects({ name, link, description, year }: Drawer
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-fit inline-block sm:text-base text-sm bg-black px-2 py-1"
+                    className="w-fit inline-block sm:text-base text-sm px-2 py-1"
                 >
                     {link.replace(/^https?:\/\//, '').replace(/\/$/, '')}
                 </a>
             </div>
-            <span className='sm:text-base text-xs'>{description}</span>
-            <span className=' font-migra text-xl pr-8 text-cozywhite'>{year}</span>
+            <span className='sm:text-base text-xs pt-6'>{description}</span>
+            <span className=' font-migra text-xl pr-3 sm:pr-8 text-cozywhite pt-6'>{year}</span>
         </div>
     )
 }
